@@ -1,0 +1,13 @@
+
+<div style="text-align:center">
+  
+    <small style='color: red' *ngIf='invalidLogin'>{{errorMessage}}</small>
+      <div>
+        
+          <div class='login'>Username:<input type="text" name='username' [(ngModel)]="username"></div>
+          <div class='login'>Password:<input type="password" name='password' [(ngModel)]="password"><br></div> 
+          <button (click)=submit()>Login</button>
+  
+      </div>
+ 
+</div>
