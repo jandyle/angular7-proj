@@ -1,0 +1,17 @@
+<div style="text-align:center">
+    <img width="600" alt="TrustArc Logo" src="https://martechseries.com/wp-content/uploads/2017/07/TrustArc-Logo.jpg">
+  </div>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">  
+    <div><a href="https://www.trustarc.com>">TRUSTe</a></div>
+    <ul class="navbar-nav">
+      <li><a *ngIf="authentication.checkLogIn()" routerLink="/welcome/jandyle" class="nav-link">Home</a></li>
+      <li><a *ngIf="authentication.checkLogIn()" routerLink="/todos" class="nav-link">Todos</a></li>
+      <li><a routerLink="error" class="nav-link">Rawr</a></li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li><a *ngIf="!authentication.checkLogIn()" href="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="authentication.checkLogIn()" href="google.com" class="nav-link">Logout</a></li>
+    </ul>
+  </nav>
+</header>

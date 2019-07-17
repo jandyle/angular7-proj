@@ -1,6 +1,6 @@
-<div style="text-align:center">
-  <table>
-    <caption>My Todo's</caption>
+<div class="container" *ngIf="authentication.checkLogIn()">
+    <h1>My Todo's</h1>
+  <table class="table">
     <thead>
       <tr>
         <th>Description</th>
@@ -16,4 +16,7 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div class="container" *ngIf="!authentication.checkLogIn()" >
+  <img  src="https://memegenerator.net/img/instances/70631324/you-shall-not-pass-until-you-verify-account-access.jpg"  class="rounded mx-auto d-block">
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
 
 export class Todo {
 
@@ -6,7 +7,7 @@ export class Todo {
     public id: number,
     public description: string,
     public done: boolean,
-    public targetDate: Date
+    public targetDate: Date,
     ) {
 
   }
@@ -19,6 +20,7 @@ export class Todo {
   styleUrls: ['./list-todos.component.css']
 })
 export class ListTodosComponent implements OnInit {
+  isLogin : boolean = false;
 
   todos = [
     new Todo(1, 'test', false, new Date()),
@@ -29,10 +31,13 @@ export class ListTodosComponent implements OnInit {
     // {id : 2, description : 'chicken'},
     // {id : 3, description : 'beef'}
   ];
+ 
 
-  constructor() { }
+  constructor(private authentication: AuthenticationService
+    ) { }
 
   ngOnInit() {
-  }
+    this.isLogin = this.authentication.checkLogIn();
+   }
 
 }
